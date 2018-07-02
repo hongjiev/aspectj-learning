@@ -1,0 +1,9 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "http://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+    <aspects>
+        <aspect name="com.javadoop.aspectjlearning.aspect.ProfilingAspect"/>
+        <weaver options="-verbose -showWeaveInfo">
+            <include within="com.javadoop.aspectjlearning..*"/>
+        </weaver>
+    </aspects>
+</aspectj>
