@@ -46,6 +46,13 @@
             <version>1.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--<dependency>-->
             <!--<groupId>org.springframework</groupId>-->
             <!--<artifactId>spring-aspects</artifactId>-->
@@ -140,14 +147,15 @@
                 <!--</executions>-->
             <!--</plugin>-->
 
-            <!--Load-Time织入，使用 mvn test 跑测试的时候可以看到效果-->
+            <!--Load-Time织入，使用 mvn test 跑测试的时候可以看到效果(请将 LoadTimeTest 中的 @Test 注释放开)-->
+            <!--适合开发阶段测试使用-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.10</version>
                 <configuration>
                     <argLine>
-                        -javaagent:/Users/hongjie/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar
+                         -javaagent:/Users/hongjie/.m2/repository/org/aspectj/aspectjweaver/1.8.13/aspectjweaver-1.8.13.jar
                     </argLine>
                     <useSystemClassLoader>true</useSystemClassLoader>
                     <forkMode>always</forkMode>
